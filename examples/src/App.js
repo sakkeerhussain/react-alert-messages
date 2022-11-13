@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AlertMessagesProvider, AlertMessagesContext } from "./lib";
+import { AlertMessagesProvider, AlertMessagesContext } from "../lib";
 
 function App() {
   return (

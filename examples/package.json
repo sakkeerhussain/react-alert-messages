@@ -1,0 +1,81 @@
+{
+  "name": "react-alert-messages",
+  "version": "1.0.4",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "description": "This is a react alert messages helper context",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakkeerhussain/react-alert-message.git"
+  },
+  "keywords": [
+    "React",
+    "Alert",
+    "message"
+  ],
+  "author": "Sakkeer Hussain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakkeerhussain/react-alert-message/issues"
+  },
+  "homepage": "https://github.com/sakkeerhussain/react-alert-message#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build": "react-scripts build",
+    "build:lib": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.20.2"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
