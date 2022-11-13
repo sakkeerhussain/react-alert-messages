@@ -1,13 +1,13 @@
 import React, { createContext, useState } from "react";
-import * as AlertMessagesConst from "components/AlertMessages/const";
 import _ from "lodash";
-import AlertMessagesComponent from "components/AlertMessages";
+import AlertMessagesComponent from "./components/AlertMessages";
+import { TYPE_SUCCESS, TYPE_FAILED, TYPE_IN_PROGRESS } from "./const";
 
-export const AlertMessageContext = createContext({
+export const AlertMessagesContext = createContext({
   postAlertMessage: () => undefined,
 });
 
-export default function AlertMessageProvider({ children }) {
+export default function AlertMessagesProvider({ children }) {
   const [alertMessages, setAlertMessages] = useState([]);
 
   const postAlertMessage = (message) => {
@@ -31,7 +31,9 @@ export default function AlertMessageProvider({ children }) {
   };
 
   const _checkForPendingMessage = (messages, message) => {
-    const existingMessage = messages.filter((msg) => msg.key == message.key)[0];
+    const existingMessage = messages.filter(
+      (msg) => msg.key === message.key
+    )[0];
 
     if (_isIndefiniteInProgressAlert(message)) {
       if (_doesExistingAlertIsInProgress(existingMessage)) {
@@ -58,29 +60,22 @@ export default function AlertMessageProvider({ children }) {
 
     return setTimeout(() => {
       setAlertMessages((messages) =>
-        messages.filter((alertMessage) => alertMessage.key != message.key)
+        messages.filter((alertMessage) => alertMessage.key !== message.key)
       );
     }, message.timeout || 2000);
   }
 
   const _isIndefiniteInProgressAlert = (message) => {
-    return (
-      message.type == AlertMessagesConst.TYPE_IN_PROGRESS &&
-      message.timeout == -1
-    );
+    return message.type === TYPE_IN_PROGRESS && message.timeout === -1;
   };
 
   const _doesExistingAlertIsInProgress = (existingMessage) => {
-    return (
-      existingMessage &&
-      existingMessage.type == AlertMessagesConst.TYPE_IN_PROGRESS
-    );
+    return existingMessage && existingMessage.type === TYPE_IN_PROGRESS;
   };
 
   const _isDoneMessageForPendingAlert = (message, existingMessage) => {
     return (
-      (message.type == AlertMessagesConst.TYPE_SUCCESS ||
-        message.type == AlertMessagesConst.TYPE_FAILED) &&
+      (message.type === TYPE_SUCCESS || message.type === TYPE_FAILED) &&
       existingMessage &&
       (existingMessage._pendingRequests ?? 0) > 1
     );
@@ -88,22 +83,23 @@ export default function AlertMessageProvider({ children }) {
 
   const _clearAlertMessageWithKey = (messages, messageKey) => {
     const messagesToClear = messages.filter(
-      (msg) => msg.key == messageKey && msg.clearMessageTimeoutReference != null
+      (msg) =>
+        msg.key === messageKey && msg.clearMessageTimeoutReference !== null
     );
     messagesToClear.forEach((messageToClear) => {
       clearTimeout(messageToClear.clearMessageTimeoutReference);
     });
 
-    return messages.filter((msg) => msg.key != messageKey);
+    return messages.filter((msg) => msg.key !== messageKey);
   };
 
   return (
-    <AlertMessageContext.Provider value={{ postAlertMessage }}>
+    <AlertMessagesContext.Provider value={{ postAlertMessage }}>
       <AlertMessagesComponent
         messages={alertMessages}
         clearAlertMessage={clearAlertMessage}
       />
       {children}
-    </AlertMessageContext.Provider>
+    </AlertMessagesContext.Provider>
   );
 }
