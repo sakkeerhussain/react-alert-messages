@@ -1,6 +1,6 @@
 {
   "name": "react-alert-messages",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "This is a react alert message helper context",
   "main": "dist/index.js",
   "files": [
