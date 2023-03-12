@@ -1,8 +1,10 @@
 {
-  "name": "react-alert-message",
-  "version": "1.0.8",
+  "name": "react-alert-messages",
+  "version": "1.0.9",
   "description": "This is a react alert message helper context",
   "main": "src/index.js",
+  "module": "lib/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

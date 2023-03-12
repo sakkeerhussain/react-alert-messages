@@ -4,7 +4,7 @@ import AlertMessagesComponent from "./components/AlertMessages";
 import { TYPE_SUCCESS, TYPE_FAILED, TYPE_IN_PROGRESS } from "./const";
 
 export const AlertMessagesContext = createContext({
-  postAlertMessage: () => undefined,
+  postAlertMessage: (message) => {}
 });
 
 export default function AlertMessagesProvider({ children }) {
