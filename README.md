@@ -1,5 +1,14 @@
 # react-alert-messages
 
+## Features
+- Alert messages disappear after fixed time
+- Option to configure the alert display time
+- Support to show alerts indefinitely
+- Option to remove an alert with alert ID
+- Option to update existing alert details
+
+## Use cases
+- Progress and success/error alert: Can post an indefinite info type alert with loading message with a unique key. After completing the action, the same alert message can be updated to success or error message based on the action's outcome with a fixed timeout.
 
 ### How to use
 
