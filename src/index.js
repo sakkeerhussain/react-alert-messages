@@ -1,4 +1,1 @@
-export {
-  default as AlertMessagesProvider,
-  AlertMessagesContext,
-} from "./AlertMessagesContext";
+export {default, AlertMessagesContext} from "./AlertMessagesContext";
