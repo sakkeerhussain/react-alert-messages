@@ -9,9 +9,7 @@ export const AlertMessagesContext = createContext({
 
 export default function AlertMessagesProvider({ children }) {
 
-
   const [alertMessages, setAlertMessages] = React.useState([]);
-  console.log({"useState": React.useState,alertMessages})
 
   const postAlertMessage = (message) => {
     message.key = message.key ?? `alert-${Date.now()}`;
