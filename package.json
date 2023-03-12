@@ -1,6 +1,6 @@
 {
   "name": "react-alert-messages",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "This is a react alert message helper context",
   "main": "dist/index.js",
   "files": [
@@ -34,7 +34,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6"
   },
-  "peerDependencies" : {
+  "peerDependencies": {
     "react": "^18.2.0",
     "@babel/polyfill": "^7.12.1",
     "@emotion/react": "^11.10.6",
