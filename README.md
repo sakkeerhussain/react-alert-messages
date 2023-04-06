@@ -8,6 +8,8 @@
 - Option to update existing alert details
 - Support multiple pending message with same key and hold the pending message until all get success or failed messages
 
+<img src="https://raw.githubusercontent.com/sakkeerhussain/react-alert-messages/main/docs/gifs/basic-alert-message.gif" alt="gif" width="300" height="540">
+
 ## Special Use cases
 ### Progress and success/error alert
 Can post an indefinite info type alert with loading message with a unique key. After completing the action, the same alert message can be updated to success or error message based on the action's outcome with a fixed timeout.
