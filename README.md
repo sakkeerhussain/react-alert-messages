@@ -14,12 +14,12 @@
 ### Progress and success/error alert
 Can post an indefinite info type alert with loading message with a unique key. After completing the action, the same alert message can be updated to success or error message based on the action's outcome with a fixed timeout.
 
-// Add gif
+<img src="https://raw.githubusercontent.com/sakkeerhussain/react-alert-messages/main/docs/gifs/progress-and-success-or-failure.gif" alt="gif" width="100%" height="auto">
 
 ### Multiple progress and one success or failure
 Can post multiple pending alert messages and send success and failure updates for each. The alert message handler will hold the progress message until received all success/failure message corresponding to each pending and will show the success/failure based on the update messages.
 
-// Add gif
+<img src="https://raw.githubusercontent.com/sakkeerhussain/react-alert-messages/main/docs/gifs/multiple-progress.gif" alt="gif" width="100%" height="auto">
 
 ## How to use
 
