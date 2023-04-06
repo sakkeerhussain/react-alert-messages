@@ -6,13 +6,23 @@
 - Support to show alerts indefinitely
 - Option to remove an alert with alert ID
 - Option to update existing alert details
+- Support multiple pending message with same key and hold the pending message until all get success or failed messages
 
-## Use cases
-- Progress and success/error alert: Can post an indefinite info type alert with loading message with a unique key. After completing the action, the same alert message can be updated to success or error message based on the action's outcome with a fixed timeout.
+## Special Use cases
+### Progress and success/error alert
+Can post an indefinite info type alert with loading message with a unique key. After completing the action, the same alert message can be updated to success or error message based on the action's outcome with a fixed timeout.
 
-### How to use
+// Add gif
 
-1. Add the line of code below to component that you wish to use the alert from
+### Multiple progress and one success or failure
+Can post multiple pending alert messages and send success and failure updates for each. The alert message handler will hold the progress message until received all success/failure message corresponding to each pending and will show the success/failure based on the update messages.
+
+// Add gif
+
+## How to use
+
+1. Wrap the root component in `AlertMessagesProvider` layout component, Or can wrap the parent component of where you which to trigger the alert messages.
+2. Add the line of code below to component that you wish to use the alert from
 
 ```
     const { postAlertMessage } = React.useContext(AlertMessageContext);
@@ -25,7 +35,7 @@
 6. Can pass `timeout` value as `-1` to display the alert message indefinitely.
 7. If a message's `timeout` is `-1` and `type` is `pending`, will be displayed if there is no message already and will increment the internal `pending` message counter and will wait for the corresponding success message for that.
 
-### How it works
+## How it works
 
 1. `alertMessageProvider` component in `alertMessageContext.tsx` is wrapped with context provider as well as associated function to allow the alert message functionality
 2. child component is wrapped with `alertMessageProvider` to allow the deliver of context.
