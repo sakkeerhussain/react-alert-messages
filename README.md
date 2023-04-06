@@ -8,7 +8,7 @@
 - Option to update existing alert details
 - Support multiple pending message with same key and hold the pending message until all get success or failed messages
 
-<img src="https://raw.githubusercontent.com/sakkeerhussain/react-alert-messages/main/docs/gifs/basic-alert-message.gif" alt="gif" width="300" height="540">
+<img src="https://raw.githubusercontent.com/sakkeerhussain/react-alert-messages/main/docs/gifs/basic-alert-message.gif" alt="gif" width="100%" height="auto">
 
 ## Special Use cases
 ### Progress and success/error alert
@@ -36,6 +36,18 @@ Can post multiple pending alert messages and send success and failure updates fo
 5. By default, the alert messages would be displayed for 2 seconds, and you can add the number of seconds on `timeout` property with the alert message to control the time alert message should be displayed.
 6. Can pass `timeout` value as `-1` to display the alert message indefinitely.
 7. If a message's `timeout` is `-1` and `type` is `pending`, will be displayed if there is no message already and will increment the internal `pending` message counter and will wait for the corresponding success message for that.
+
+## Config Details
+
+### Alert message types
+
+- success
+- error
+- in-progress
+
+### Alert message timeout
+Timeout is the time the message should show to the user in milliseconds. This will be defaulted with 2000 if not passed. This will support `-1` as value to display the message indefinitely.
+
 
 ## How it works
 

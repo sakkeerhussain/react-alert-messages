@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { AlertMessagesContext } from 'react-alert-messages';
 import { useContext } from 'react';
+import { PAGES } from './Constants';
 
-export default function SimpleAlertPage() {
+export default function SimpleAlertPage({ setPage }) {
   const { postAlertMessage } = useContext(AlertMessagesContext);
   return (
     <div id="page-root">
@@ -28,7 +29,7 @@ export default function SimpleAlertPage() {
         <div>
           <button
             onClick={() => {
-              postAlertMessage({ text: 'This is not implemented yet' });
+              setPage(PAGES.SPECIAL_USE_CASES);
             }}
             style={{
               marginTop: 20,
