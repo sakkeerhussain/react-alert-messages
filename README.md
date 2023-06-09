@@ -26,7 +26,7 @@
   jsx
     ```
     import React, { useContext } from 'react';
-    import { AlertMessageContext, AlertMessagesProvider } from 'react-alert-messages';
+    import AlertMessagesProvider, { AlertMessagesContext } from 'react-alert-messages';
     ```
 
 - Wrap your root component with the AlertMessagesProvider component, and pass in any necessary options as props:
@@ -44,7 +44,7 @@
 - Call the useContext hook to get a reference to the AlertMessageContext and the postAlertMessage function:
   jsx
     ```
-    const { postAlertMessage } = useContext(AlertMessageContext);
+    const { postAlertMessage } = useContext(AlertMessagesContext);
     ```
 
   In this example, we are passing in the text property to the postAlertMessage function. Details of the other properties are provided below in the config details section.
