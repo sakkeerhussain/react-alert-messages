@@ -22,7 +22,7 @@
     yarn add react-alert-messages
     ```
 
-- Import the AlertMessageContext, AlertMessagesProvider and the useContext hook from react in your component:
+- Import the AlertMessagesContext, AlertMessagesProvider and the useContext hook from react in your component:
   jsx
     ```
     import React, { useContext } from 'react';
@@ -41,7 +41,7 @@
     }
     ```
 
-- Call the useContext hook to get a reference to the AlertMessageContext and the postAlertMessage function:
+- Call the useContext hook to get a reference to the AlertMessagesContext and the postAlertMessage function:
   jsx
     ```
     const { postAlertMessage } = useContext(AlertMessagesContext);
@@ -66,7 +66,7 @@
     );
     ```
 
-  And that's it! With these steps, you should be able to use react-alert-messages to post customizable alert messages in response to user actions using the AlertMessageContext and the postAlertMessage function.
+  And that's it! With these steps, you should be able to use react-alert-messages to post customizable alert messages in response to user actions using the AlertMessagesContext and the postAlertMessage function.
 
 
 ## Special Use cases
@@ -90,7 +90,7 @@ Can post multiple pending alert messages and send success and failure updates fo
 [//]: # ()
 [//]: # (```)
 
-[//]: # (    const { postAlertMessage } = React.useContext&#40;AlertMessageContext&#41;;)
+[//]: # (    const { postAlertMessage } = React.useContext&#40;AlertMessagesContext&#41;;)
 
 [//]: # (```)
 
@@ -121,6 +121,6 @@ The timeout prop specifies how long the alert messages should be displayed befor
 
 ## How it works
 
-1. `alertMessageProvider` component in `alertMessageContext.tsx` is wrapped with context provider as well as associated function to allow the alert message functionality
-2. child component is wrapped with `alertMessageProvider` to allow the deliver of context.
+1. `AlertMessagesProvider` component in `AlertMessagesContext.tsx` is wrapped with context provider as well as associated function to allow the alert message functionality
+2. Child component is wrapped with `AlertMessagesProvider` to allow the deliver of context.
 
