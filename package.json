@@ -1,6 +1,6 @@
 {
   "name": "react-alert-messages",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "This is a react alert messages helper context",
   "main": "dist/index.js",
   "files": [
@@ -41,6 +41,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.12",
     "lodash": "^4.17.21",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "core-js": "^3.13.1"
   }
 }
