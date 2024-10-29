@@ -36,11 +36,11 @@
     "prettier": "^2.8.7"
   },
   "peerDependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.12",
-    "lodash": "^4.17.21",
+    "@babel/polyfill": ">=7.12.1",
+    "@emotion/react": ">=11.10.6",
+    "@emotion/styled": ">=11.10.6",
+    "@mui/material": ">=5.11.12",
+    "lodash": ">=4.17.21",
     "react": ">=17.0.0"
   }
 }
